@@ -1,0 +1,20 @@
+Algoirthm:
+
+1. Start
+2. Declare & initalize the varibales
+3. i of integer,j of float, mychar of char, k of long int,l of unsigned long
+4. print the initalized value into console using the proper format specifier
+5. return a null value
+6. end
+
+#include <stdio.h>
+int main()
+{
+int i=100;
+float j=10.2;
+char mychar='a';
+long k=-235712;
+unsigned long l=23571;
+printf("%d %f %c %ld %lu", i,j,mychar,k,l);
+return 0;
+}
