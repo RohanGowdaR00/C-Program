@@ -1,0 +1,29 @@
+Algoirthm:
+
+1. Start
+2. Define macro variable for salaryamtperhour
+3. Declare the variables hours & salary of float type
+4. Declare the variables employee max of 10 digits of char type
+5. get the input from the user for employee id & worked hours
+6. calculate the salary using salaryamtperhour & worked hours
+7. Print the employee id
+8. Print the salary
+9. return null value
+10. end
+
+#include <stdio.h>
+#define salaryamtperhour 15000
+int main()
+{
+float hours, salary;
+char employeeid[10];
+
+printf("enter id:%c\n");
+printf("worked hours:%f\n");
+scanf("%10s",&employeeid);
+scanf("%f",&hours);
+salary=salaryamtperhour * hours;
+printf("id:%s",employeeid);
+printf("salary:%.2f",salary);
+return 0;
+}
