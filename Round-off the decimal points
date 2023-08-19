@@ -1,0 +1,21 @@
+Algorithm:
+
+1. Start
+2. Declare the variable i of float type
+3. Initialize the value with more decimal numbers
+4. print the initialized value into console using the proper format specifier
+5. Round off different decimal values 
+6. return a null value
+7. end
+
+#include <stdio.h>
+int main()
+{
+float  i=4.294967;
+printf("%0.1f\n",i);
+printf("%0.2f\n",i);
+printf("%0.3f\n",i);
+printf("%0.4f\n",i);
+printf("%0.5f\n",i);
+return 0;
+}
