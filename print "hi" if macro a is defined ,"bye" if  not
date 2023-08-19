@@ -1,0 +1,23 @@
+Algoirthm:
+
+1. Start
+2. Define macro variable for pi
+3. Use conditional compilation 
+4. Check if the defined macro is present or not by usinf #ifdef
+5. if present print"hi"
+6. if its not present print "bye"
+7. End the conditional compilation using #endif
+7. return null value
+8. end
+
+#include <stdio.h>
+#define a 200
+int main()
+{
+#ifdef a
+printf("hi\n");
+#else
+printf("bye\n");
+#endif
+return 0;
+}
