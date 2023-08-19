@@ -1,0 +1,17 @@
+Algorithm:
+
+1. Start
+2. Declare the variable i of integer type
+3. initialize the i value with value greater than its range
+4. print the initialized value into console using the proper format specifier
+5. return a null value
+6. end
+
+
+#include <stdio.h>
+int main()
+{
+int i=4294967295;
+printf("%d",i);
+return 0;
+}
