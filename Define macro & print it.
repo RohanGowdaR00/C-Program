@@ -1,0 +1,20 @@
+Algoirthm:
+
+1. Start
+2. Define macro variable for pi
+3. Declare & initalize the varibales result & r of type float
+4 Claculate the circumference of the circle using 2,pi,r
+5. Store the calulated resultant value in result variable
+6. print the result value in console
+7. return null value
+8. end
+
+#include <stdio.h>
+#define pi 3.142
+int main()
+{
+float result, r=2.3;
+result=2*pi*r;
+printf("%d",result);
+return 0;
+}
