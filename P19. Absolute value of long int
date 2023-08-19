@@ -1,0 +1,26 @@
+
+Algorithm:
+
+1. Start
+2. Declare required header files
+3. Declare the variable of type unsigned long integer
+4. Give the inputs manually
+5. If the number is positive it should print the same number
+6. If the number is negative then it should give the positive number
+7. Return null value
+8. End
+
+ 
+#include<stdio.h>
+#include<stdlib.h>
+int main ()
+{
+long int x,y;
+printf("\n Input 1st number (positive or negative) : ");
+scanf("%ld",&x);
+printf(" Input 2nd number (positive or negative) : ");
+scanf("%ld",&y);
+printf (" The absolute value of 1st number is : %ld\n",labs(x));
+printf (" The absolute value of 2nd number is : %ld\n\n",labs(y));
+return 0;
+}
