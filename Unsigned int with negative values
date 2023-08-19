@@ -1,0 +1,16 @@
+Algorithm:
+
+1. Start
+2. Declare the variable of type unsigned integer
+3. Initialize with the negative number for that variable
+4. Print the output value
+5. return a null value
+6. end
+
+#include <stdio.h>
+int main()
+{
+unsigned int i = -200;
+printf("%d", i);
+return 0;
+}
