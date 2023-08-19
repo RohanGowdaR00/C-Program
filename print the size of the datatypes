@@ -1,0 +1,22 @@
+Algoirthm:
+
+1. Start
+2. Declare the varibales of various data types
+3. varibales of integer, float, charater, long integer,double & unsigned long
+4. size of the datatype by using key word - sizeof()
+5. print the size value of every datatype 
+6. return null value
+7. end
+
+#include <stdio.h>
+int main()
+{
+int n1;
+float n2;
+char n3;
+long n4;
+double n5;
+unsigned long n6;
+printf("%d %d %d %d %d %d %d",sizeof(n1),sizeof(n6),sizeof(n2),sizeof(n3),sizeof(n4),sizeof(n5));
+return 0;
+}
