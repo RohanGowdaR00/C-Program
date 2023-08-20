@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+  float a=2.7;
+  float b=0.99;
+  float c;
+  c=a-b;
+  printf("no. entered is %f\n", c);
+  return 0;
+}
