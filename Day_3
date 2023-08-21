@@ -1,0 +1,82 @@
+//P20. enum
+
+#include<stdio.h>
+int main()
+{
+enum week {MON,TUE,WED,THU,FRI,SAT,SUN};
+enum week day ;
+printf("%d %d %d %d %d %d %d",MON,TUE,WED,THU,FRI,SAT,SUN);
+return 0;
+}
+
+//P21. bool
+
+#include<stdio.h>
+#include<stdbool.h>
+int main()
+{
+bool n1 = true;
+bool n2 = false;
+bool n3 = 0;
+bool n4 = 123;
+printf("%d %d %d %d",n1,n2,n3,n4);
+return 0;
+}
+
+//P22. variable
+
+#include<stdio.h>
+#include<stdbool.h>
+int main()
+{
+int n1 = 123456;
+
+printf("%d",n1);
+return 0;
+}
+
+//P23. ASCII value of any key
+
+#include<stdio.h>
+#include<stdbool.h>
+int main()
+{
+char ch;
+printf("enter any key\n");
+scanf("%c",&ch);
+printf("%d",ch);
+return 0;
+}
+
+//P24. const int
+
+#include<stdio.h>
+int main()
+{
+const int ch=5;
+printf("%d",ch);
+return 0;
+}
+
+//P25. change the value of the varibale of type constant
+"Displays error"
+#include<stdio.h>
+int main()
+{
+const int ch=5;
+ch=6;
+printf("%d",ch);
+return 0;
+}
+
+//P26. varibale name as any keyword
+"Displays error"
+#include<stdio.h>
+int main()
+{
+int if =5;
+printf("%d",ch);
+return 0;
+}
+
+
