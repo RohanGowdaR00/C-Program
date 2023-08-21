@@ -79,4 +79,40 @@ printf("%d",ch);
 return 0;
 }
 
+//Pe. Print character from ASCII value
 
+#include<stdio.h>
+int main()
+{
+int ch;
+printf("enter the ASCII value\n");
+scanf("%d",&ch);
+printf("%c",ch);
+return 0;
+}
+
+//Pf. Add two floating point & display result upto 20 decimal points
+
+#include<stdio.h>
+int main()
+{
+    float a=254.14575127404212554256320;
+    float b=152.16596532347996649796497;
+    float res;
+    res=a+b;
+    printf("%0.19f",res);
+    return 0;
+}
+
+//Pg. Uppercase to Lowercase
+
+#include<stdio.h>
+int main()
+{
+    char ch,up;
+    printf("enter character:\n");
+    scanf("%c",&ch);
+    up=toupper(ch);
+    printf("%c",up);
+    return 0;
+}
