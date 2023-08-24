@@ -366,5 +366,20 @@ int main ()
 
 //P.69. Condense specified number of total days into years,weeks & days
 
+#include<stdio.h>
+int main ()
+{
+    int a;
+    int yrs,modyrs, weeks, modweeks, days;
+    printf("enter total no. of days:");
+    scanf("%d", &a);
+    modyrs=a%365;
+    yrs=a/365;
+    modweeks=modyrs%7;
+    weeks=modyrs/7;
+    days=modweeks;
+    printf("%d %d %d", yrs, weeks, days);
+    return 0;
+}
 
 
