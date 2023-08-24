@@ -382,6 +382,31 @@ int main ()
     return 0;
 }
 
+//P70. Mobile program
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a,b;
+    int Karbon=20000, Micromax=30000, MTS=100000, Nokia=30000, G_one=50000, Samsung=40000;
+    printf("enter a and b");
+    scanf("%d %d", &a, &b);
+    if(Karbon>=a && Karbon<=b)
+    printf("Karbon is available\n");
+    if(Micromax>=a && Micromax<=b)
+    printf("Micromax is available\n");
+    if(MTS>=a && MTS<=b)
+    printf("MTS is available\n");
+    if(Nokia>=a && Nokia<=b)
+    printf("Nokia is available\n");
+    if(G_one>=a && G_one<=b)
+    printf("G_one is available\n");
+    if(Samsung>=a && Samsung<=b)
+    printf("Samsung is available");
+    return 0;
+}
+
 
 //P72. Calculator
 #include<stdio.h>
