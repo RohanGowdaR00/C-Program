@@ -261,3 +261,110 @@ int main ()
   }
 
 //P65. 
+
+#include<stdio.h>
+int main()
+{
+int a,b,c;
+printf("The 3 Triangle is values are: \n");
+scanf("%d %d %d",&a,&b,&c);
+if(a+b>c&&b+c>a&&c+a>b)
+{
+printf("Triangle can be formed \n");
+}
+else
+printf("Triangle cannot be formed \n");
+return 0;
+}
+
+//P66. Alphabet or number or special char
+
+#include<stdio.h>
+int main()
+{
+char c;
+printf("Enter a Character: \n");
+scanf("%c",&c);
+if((c>=65&&c<=90)||(c>=97&&c<=122))
+    printf("The alphabets \n");
+else if(c>=48&&c<=57)
+    printf("The Digits \n");
+else
+   printf("The special character \n");
+return 0;
+}
+
+//P67. Electric bill
+
+#include<stdio.h>
+int main()
+{
+    char c[20];
+    int ID, unit;
+    float amt, cpu1, cpu2, cpu3, cpu4;
+    printf("name  id  unit");
+    scanf("%s %d %d", &c, &ID, &unit);
+    if(unit<=199)
+    {
+        cpu1 = 1.2;
+        amt = cpu1* unit;
+    }
+    else if(unit>=200 && unit<400)
+    {
+        cpu2 = 1.5;
+        amt = (1.2*199) + (cpu2*(unit-199));
+    }
+    else if(unit>=400 && unit<600)
+    {
+        cpu3=1.8;
+        amt = (1.2*199) + (1.5*199) + (cpu3*(unit-399));
+    }
+    else
+    {
+        cpu4=2.0;
+
+        amt = (1.2*199) + (1.5*199) + (1.8*199) + (cpu4*(unit-599));
+    }
+
+    if(amt>=400)
+        amt = amt + amt*0.15;
+    if(amt<=100)
+        amt = 100;
+
+    printf("%f", amt);
+    return 0;
+}
+
+//P68. Print the days of the week
+
+#include<stdio.h>
+int main ()
+{
+    enum month {SUN=1,MON,TUE,WED,THUR,FRI,SAT};
+    enum month day;
+    printf("enter day:\n");
+    scanf("%d",&day);
+    switch (day)
+    {
+        case 1: printf("SUN");
+        break;
+        case 2: printf("MON");
+        break;
+        case 3: printf("TUE");
+        break;
+        case 4: printf("WED");
+        break;
+        case 5: printf("THUR");
+        break;
+        case 6: printf("FRI");
+        break;
+        case 7: printf("SAT");
+        break;
+    }
+    return 0;
+}
+
+//P.69. Condense specified number of total days into years,weeks & days
+
+
+
