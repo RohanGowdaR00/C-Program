@@ -12,6 +12,78 @@
         printf("not equal");
       return 0;
   }
+// P55. Calender
+#include<stdio.h>
+int main ()
+{
+    int date, days, mon, total;
+    printf("date and month");
+    scanf("%d %d", &date, &mon);
+    if (mon==1)
+    days=31;
+    if (mon==2)
+    days=59;
+    if (mon==3)
+    days=90;
+    if (mon==4)
+    days=120;
+    if (mon==5)
+    days=151;
+    if (mon==6)
+    days=181;
+    if (mon==7)
+    days=212;
+    if (mon==8)
+    days=243;
+    if (mon==9)
+    days=273;
+    if (mon==10)
+    days=304;
+    if (mon==11)
+    days=334;
+    if (mon==12)
+    days=365;
+
+    total = days;
+
+    if(mon==1||mon==3||mon==5||mon==7||mon==8||mon==10||mon==12)
+        total = total-31+date;
+    else if(mon==4||mon==6||mon==9||mon==11)
+        total = total-30+date;
+    else
+        total = total-28+date;
+
+    switch(total%7)
+    {
+        case 0:
+    printf("sat");
+    break;
+        case 1:
+    printf("sun");
+    break;
+
+        case 2:
+    printf("mon");
+    break;
+
+        case 3:
+    printf("tue");
+    break;
+
+        case 4:
+    printf("wed");
+    break;
+
+        case 5:
+    printf("thur");
+    break;
+    
+        case 6:
+    printf("fri");
+    break;
+    }
+}
+
 
 //P56.Positive ,negative & zero
 
