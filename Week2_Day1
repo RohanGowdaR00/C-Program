@@ -165,4 +165,67 @@ int main() {
     return 0;
 }
 
+//P85. Decimal to binary conversion and count no. of 0's and 1's.
+#include<stdio.h>
+int main()
+{
+    int deci_no, bin_no, count0=0, count1=0, temp;
+    printf("Enter decimal number:\n");
+    scanf("%d", &deci_no);
+    for(;;)
+    {
+        bin_no = deci_no % 2;
+        if(bin_no == 0)
+            count0++;
+        else
+            count1++;
+        printf("%d", bin_no);   // Read the output from right to left.
+        deci_no = deci_no / 2;
+        if(deci_no == 0)
+            break;
+
+    }
+    printf("\n%d \n%d", count0, count1);
+}
+
+//P86. Set,clear & toggle the last bit
+
+#include<stdio.h>
+int main()
+{
+    int deci_no, bin_no, set=1, clr=1, toggle;
+    printf("Enter decimal number:\n");
+    scanf("%d", &deci_no);
+    for(;;)
+    {
+        bin_no = deci_no % 2;
+        printf("%d", bin_no);   // Read the output from right to left.
+        deci_no = deci_no / 2;
+        if(deci_no == 0)
+            break;
+    }
+
+    printf("\n%d\n", bin_no);
+
+
+    if(bin_no==0)
+    {
+        bin_no=1;
+         printf("%d\n",bin_no);
+    }
+    else{
+       bin_no=0;
+         printf("%d\n",bin_no);
+    }
+    if(bin_no==0 || bin_no==1)
+      {
+         bin_no = 1;
+         printf("%d\n",bin_no);
+      }
+    if(bin_no==0 || bin_no==1)
+    {
+       bin_no = 0;
+       printf("%d\n",bin_no);
+    }
+}
 
