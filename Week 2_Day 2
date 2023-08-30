@@ -1,0 +1,379 @@
+//P88. Square of an no.
+#include<stdio.h>
+#include<math.h>
+int square(int a);
+int main()
+{
+    int num,res;
+    printf("enter the number:\n");
+    scanf("%d",&num);
+    res=square(num);
+    printf("sqaure is %d",res);
+    return 0;
+}
+
+int square(int a)
+{
+    int sq;
+    sq=pow(a, 2);
+    return sq;
+}
+
+//P89. Product of integer and floating type function argument.
+#include<stdio.h>
+#include<math.h>
+
+float product(int a, float b); //int a, float b
+
+int main()
+{
+    int n1;
+    float n2, result;
+    printf("enter the number:\n");
+    scanf("%d %f",&n1, &n2);
+    result=product(n1, n2);
+    printf("product is %f",result);
+    return 0;
+}
+
+ float product(int a, float b)
+{
+//    int a, float b;
+    float prod = a * b;
+    return prod;
+
+}
+
+//P90. Simple calculator using function.
+#include<stdio.h>
+//#include<stdlib.h>
+
+float calculator(int x, int y);
+float div(int a, int b);
+
+int multi(int a, int b);
+int sub(int a, int b);
+int add(int a, int b);
+
+
+int main()
+{
+    int a, b;
+    float result;
+    printf("enter the values:\n");
+    scanf("%d %d", &a, &b);
+    result = calculator(a,b);
+    printf("%f", result);
+    return 0;
+}
+
+float calculator(int x, int y)
+{
+    float output;
+    char mychar;
+    printf("enter the operator:\n");
+    scanf(" %c", &mychar);
+    switch(mychar)
+    {
+        case '+':
+            output = add(x, y);
+            break;
+        case '-':
+            output = sub(x, y);
+            break;
+        case '*':
+            output = multi(x, y);
+            break;
+        case '/':
+            output = div(x, y);
+            break;
+    }
+    return output;
+
+}
+
+int add(int a, int b)
+{
+    int res = a+b;
+    return res;
+}
+
+int sub(int a, int b)
+{
+    int res = a-b;
+    return res;
+}
+
+int multi(int a, int b)
+{
+    int res = a*b;
+    return res;
+}
+
+float div(int a, int b)
+{
+    float res = (float)a/(float)b;
+    return res;
+}
+
+//P92. Volume of a sphere.
+#include<stdio.h>
+
+#define PI 3.14
+#define cube(a) a*a*a
+
+float volume_sphere(float a);
+
+int main()
+{
+    float r;
+    float volume;
+
+    printf("enter the radius:\n");
+    scanf("%f", &r);
+
+    volume = volume_sphere(r);
+
+    printf("%f", volume);
+
+    return 0;
+}
+
+float volume_sphere(float a)
+{
+    float result = (4.0/3.0) * PI * cube(a);
+    return result;
+}
+
+
+//P93. Factorial using recursion.
+#include<stdio.h>
+
+int factorial(int a);
+
+int main()
+{
+    int fact,num;
+    printf("enter the number:\n");
+    scanf("%d",&num);
+    fact=factorial(num);
+    printf("%d",fact);
+    return 0;
+}
+
+int factorial(int a)
+{
+    if(a>1)
+    {
+        a=a*factorial(a-1);
+    }
+
+
+    return a;
+}
+
+//P94. LCM of 2 no. using recursion.
+#include<stdio.h>
+
+int lcm_no(int a, int b);
+
+int main()
+{
+    int num1,num2,LCM;
+    printf("enter the numbers:\n");
+    scanf("%d %d",&num1,&num2);
+    LCM=lcm_no(num1,num2);
+    printf("%d",LCM);
+    return 0;
+}
+
+int lcm_no(int a, int b)
+{
+ int least_multiple=1;
+    if(least_multiple%a==0 && least_multiple%b==0)
+    {
+        return  least_multiple;
+    }
+    else
+    {
+        least_multiple++;
+        lcm_no(a,b);
+        return least_multiple;
+    }
+}
+
+//P95. Exponential of a no. using recursion.
+#include <stdio.h>
+#include <math.h>
+
+int powRec(int a,int b);
+
+int main()
+{
+  int a, b, result;
+  printf("enter the no.:\n");
+  scanf("%d %d", &a,&b);
+  result = powRec(a,b);
+  printf("%d", result);
+  return 0;
+}
+
+//int powRec(int a,int b)
+//{
+//    if(b==0)
+//        return 1;
+//    int power = a*powRec(a,b-1);
+//    return power;
+//}
+
+int powRec(int a,int b)
+{
+    if(b==0)
+        return 1;
+    int power = a * pow(a, b-1);
+    return power;
+}
+
+//P96. No argument and no return value.
+#include<stdio.h>
+#include<math.h>
+
+int square();
+
+int main()
+{
+    int num,res;
+    printf("enter the number:\n");
+    scanf("%d",&num);
+    res=square();
+    printf("square is %d",res);
+    return 0;
+}
+
+int square()
+{
+    int sq, a;
+    sq=pow(a, 2);
+}
+
+//P97. Argument with return value.
+#include<stdio.h>
+#include<math.h>
+
+int square(int a);
+
+int main()
+{
+    int num,res;
+    printf("enter the number:\n");
+    scanf("%d",&num);
+    res=square(num);
+    printf("square is %d",res);
+    return 0;
+}
+
+int square(int a)
+{
+    int sq;
+    sq=pow(a, 2);
+}
+
+//P98. no argument with return value.
+#include<stdio.h>
+#include<math.h>
+
+int square();
+
+int main()
+{
+    int num,res;
+    printf("enter the number:\n");
+    scanf("%d",&num);
+    res=square();
+    printf("square is %d",res);
+    return 0;
+}
+
+int square()
+{
+    int sq, a;
+    sq=pow(a, 2);
+return sq
+}
+
+//P99. Global and local declaration.
+#include<stdio.h>
+
+int var=1;
+
+int main()
+{
+    int var=2, result;
+    result = variable(var);
+    printf("%d",result);
+    return 0;
+}
+int variable(int a)
+{
+    int res = a;
+    return res;
+}
+
+//P100. Global variable of type int, float, char, double.
+#include<stdio.h>
+
+int variable1(int a);
+float variable2(float b);
+char variable3(char mychar);
+double variable4(double a);
+
+int a;
+float b;
+char mychar;
+double c;
+
+int main()
+{
+    int a;
+    float b;
+    char mychar;
+    double c;
+    
+    int result1 = variable1(a);
+    float result2 = variable2(b);
+    char result3 = variable3(mychar);
+    double result4 = variable4(c);
+    printf("%d\n", a);
+    printf("%f\n", b);
+    printf("%c\n", mychar);
+    printf("%lf\n", c);
+
+    return 0;
+}
+int variable1(int a)
+{
+    int res1 = a;
+    return res1;
+}
+float variable2(float b)
+{
+    float res2 = b;
+    return res2;
+}
+char variable3(char mychar)
+{
+    char res3 = mychar;
+    return res3;
+}
+double variable4(double c)
+{
+    double res4 = c;
+    return res4;
+}
+
+//P101. 
+
+
+
+
+
