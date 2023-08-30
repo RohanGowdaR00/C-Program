@@ -1,0 +1,32 @@
+//P102. Average of 1D array.
+#include<stdio.h>
+
+float avg_arr(int sum, int n);
+
+int main()
+{
+    int n,i,sum=0;
+    float average;
+    printf("enter the size of array:\n");
+    scanf("%d", &n);
+    int arr[n];
+    printf("enter the array elements:\n");
+    for(i=0;i<n;i++)
+    {
+
+        scanf("%d",&arr[i]);
+        sum+=arr[i];
+    }
+    average = avg_arr(sum,n);
+    printf("%f", average);
+    return 0;
+
+}
+
+float avg_arr(int sum, int n)
+{
+     float avg=(float)sum/ (float)n;
+     return avg;
+}
+
+//P103. count total no. of duplicate element in 1D array.
