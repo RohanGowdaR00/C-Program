@@ -125,4 +125,278 @@ int main()
     return 0;
 }
 
+//P104. Pass 1D & 2D array to the function
+
+#include<stdio.h>
+int arr(int b[]);
+int two_arr(int rows,int col,int c[rows][col]);
+int size;
+int main()
+{
+    int rows,col;
+    printf("enter the size of elements\n");
+    scanf("%d",&size);
+    int arr1[size];
+    printf("enter elemnts\n");
+    for(int i=0; i<size; i++)
+    {
+        scanf("%d",&arr1[i]);
+    }
+
+    arr(arr1);
+    printf("enter the size of elements\n");
+    scanf("%d%d",&rows,&col);
+    int arr2[rows][col];
+    printf("enter elemnts\n");
+    for(int i=0; i<rows; i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+           scanf("%d",&arr2[i][j]);
+        }
+
+    }
+    two_arr(rows,col,arr2);
+    return 0;
+}
+int arr(int b[])
+{
+
+    for(int i=0; i<size; i++)
+    {
+
+        printf("the elements are %d\n",b[i]);
+    }
+}
+int two_arr(int rows,int col,int c[rows][col])
+{
+
+    for(int i=0;i<rows;i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+            printf("the elements are %d\n",c[i][j]);
+        }printf("\n");
+    }printf("\n");
+}
+
+//P105. Add,Sub & multi on matrix
+#include <stdio.h>
+int main() 
+{
+    int rows, cols;
+
+    printf("Enter the number of rows and columns for the matrices: ");
+    scanf("%d %d", &rows, &cols);
+
+    int matrix1[rows][cols], matrix2[rows][cols], result[rows][cols];
+
+    printf("For Matrix 1:\n");
+    inputMatrix(rows, cols, matrix1);
+
+    printf("For Matrix 2:\n");
+    inputMatrix(rows, cols, matrix2);
+
+    if (rows != cols)
+{
+        printf("Matrix addition is not possible for non-square matrices.\n");
+    } else
+{
+        addMatrices(rows, cols, matrix1, matrix2, result);
+        displayMatrix(rows, cols, result);
+    }
+
+    return 0;
+}
+
+void inputMatrix(int rows, int cols, int matrix[rows][cols])
+{
+    printf("Enter elements of the matrix:\n");
+    for (int i = 0; i < rows; i++)
+{
+        for (int j = 0; j < cols; j++) 
+{
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+
+void addMatrices(int rows, int cols, int matrix1[rows][cols], int matrix2[rows][cols], int result[rows][cols]) 
+{
+    for (int i = 0; i < rows; i++) 
+{
+        for (int j = 0; j < cols; j++)
+{
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+}
+
+void displayMatrix(int rows, int cols, int matrix[rows][cols])
+{
+    printf("Resultant Matrix:\n");
+    for (int i = 0; i < rows; i++) 
+{
+        for (int j = 0; j < cols; j++)
+{
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+for multiplication:
+void multiplyMatrices(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols2]) 
+{
+    if (cols1 != rows2)
+{
+        printf("Matrix multiplication is not possible. Number of columns in Matrix 1 must be equal to the number of rows in Matrix 2.\n");
+        return;
+    }
+
+    for (int i = 0; i < rows1; i++)
+{
+        for (int j = 0; j < cols2; j++) 
+{
+            result[i][j] = 0;
+            for (int k = 0; k < cols1; k++)
+{
+                result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+}
+
+//P107. largest & smallest of matrix
+
+#include <stdio.h>
+int main() 
+{
+    int rows, cols;
+
+    printf("Enter the number of rows and columns for the matrix: ");
+    scanf("%d %d", &rows, &cols);
+
+    int matrix[rows][cols];
+
+    printf("Enter elements of the matrix:\n");
+    for (int i = 0; i < rows; i++) 
+{
+        for (int j = 0; j < cols; j++)
+{
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    int largest = findLargest(rows, cols, matrix);
+    int smallest = findSmallest(rows, cols, matrix);
+
+    printf("Largest value in the matrix: %d\n", largest);
+    printf("Smallest value in the matrix: %d\n", smallest);
+
+    return 0;
+}
+int findLargest(int rows, int cols, int matrix[rows][cols])
+{
+    int largest = matrix[0][0];
+
+    for (int i = 0; i < rows; i++) 
+{
+        for (int j = 0; j < cols; j++) 
+{
+            if (matrix[i][j] > largest) 
+{
+                largest = matrix[i][j];
+            }
+        }
+    }
+
+    return largest;
+}
+
+int findSmallest(int rows, int cols, int matrix[rows][cols]) 
+{
+    int smallest = matrix[0][0];
+
+    for (int i = 0; i < rows; i++) 
+{
+        for (int j = 0; j < cols; j++)
+{
+            if (matrix[i][j] < smallest) 
+{
+                smallest = matrix[i][j];
+            }
+        }
+    }
+
+    return smallest;
+}
+
+
+
+//P108. reverse elements of 2D array
+
+#include <stdio.h>
+int main() 
+{
+    int rows, cols;
+
+    printf("Enter the number of rows and columns for the 2D array: ");
+    scanf("%d %d", &rows, &cols);
+
+    int matrix[rows][cols];
+
+    printf("Enter elements of the 2D array:\n");
+    for (int i = 0; i < rows; i++) 
+{
+        for (int j = 0; j < cols; j++)
+{
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    reverseArray(rows, cols, matrix);
+    displayArray(rows, cols, matrix);
+
+    return 0;
+}
+
+
+
+void reverseArray(int rows, int cols, int matrix[rows][cols]) 
+{
+    int temp[rows][cols];
+
+    for (int i = rows - 1, r = 0; i >= 0; i--) 
+{
+        for (int j = cols - 1, c = 0; j >= 0; j--) 
+{
+            temp[r][c] = matrix[i][j];
+            c++;
+        }
+        r++;
+    }
+
+    for (int i = 0; i < rows; i++) 
+{
+        for (int j = 0; j < cols; j++) 
+{
+            matrix[i][j] = temp[i][j];
+        }
+    }
+}
+
+
+void displayArray(int rows, int cols, int matrix[rows][cols]) 
+{
+    printf("Reversed Array:\n");
+    for (int i = 0; i < rows; i++) 
+{
+        for (int j = 0; j < cols; j++) 
+{
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
 
