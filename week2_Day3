@@ -400,3 +400,131 @@ void displayArray(int rows, int cols, int matrix[rows][cols])
     }
 }
 
+//P110. delete array element at desired position
+
+#include <stdio.h>
+#define MAX_SIZE 100
+    int delete(int arr[]);
+int main()
+{
+    int arr[MAX_SIZE];
+    int i, size, pos;
+
+
+    printf("Enter size of the array : ");
+    scanf("%d", &size);
+    printf("Enter elements in array : ");
+    for(i=0; i<size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+
+printf("after deleting the array is %d",delete(arr));
+
+        return 0;
+}
+
+
+
+
+    int delete(int arr[])
+    {
+        int pos,i,size=5;
+
+        printf("Enter the element position to delete : ");
+    scanf("%d", &pos);
+       if(pos < 0 || pos > size)
+    {
+        printf("Invalid position! Please enter position between 1 to %d", size);
+    }
+    else
+    {
+
+        for(i=pos-1; i<size-1; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+
+
+        size--;
+
+        printf("\nElements of array after delete are : ");
+        for(i=0; i<size; i++)
+        {
+            printf("%d\t", arr[i]);
+        }
+    }
+ return arr[i];
+    }
+
+//P111. BODMAS
+
+#include <stdio.h>
+int main() {
+    double num1, num2, num3, num4;
+    char op1, op2, op3;
+
+    printf("Enter the first number: ");
+    scanf("%lf", &num1);
+    printf("Enter the first operation : ");
+    scanf(" %c", &op1);
+    printf("Enter the second number: ");
+    scanf("%lf", &num2);
+
+    printf("Enter the third number: ");
+    scanf("%lf", &num3);
+    printf("Enter the second operation : ");
+    scanf(" %c", &op2);
+    printf("Enter the fourth number: ");
+    scanf("%lf", &num4);
+
+    printf("Enter the third operation : ");
+    scanf(" %c", &op3);
+
+    double result = performBODMAS(num1, op1, num2, op2, num3, op3, num4);
+
+    if (result != 0.0) 
+        {
+        printf("Result: %.2lf\n", result);
+    } else {
+        printf("Invalid operations. Please check your input.\n");
+    }
+
+    return 0;
+}
+
+
+double performBODMAS(double num1, char op1, double num2, char op2, double num3, char op3, double num4) 
+{
+
+    if (op1 == '*') 
+        {
+        num1 *= num2;
+    } else if (op1 == '/') 
+    {
+        num1 /= num2;
+    }
+
+    if (op2 == '*') 
+        {
+        num3 *= num4;
+    } else if (op2 == '/') 
+    {
+        num3 /= num4;
+    }
+
+    if (op3 == '+') 
+        {
+        return num1 + num3;
+    } else if (op3 == '-') 
+    {
+        return num1 - num3;
+    }
+
+    return 0.0;  
+}
+
+
+
+
