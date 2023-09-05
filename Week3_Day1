@@ -1,0 +1,237 @@
+//P112. string copy
+#include <stdio.h>
+#include<string.h>
+char stringcpy(char s1[],char s2[]);
+int main()
+{
+ char s1[10],s2[10];
+ printf("enter string1:\n");
+ scanf("%s",s1);
+ stringcpy(s1,s2);
+printf("%s",s2);
+   return 0;
+}
+
+char stringcpy(char s1[],char s2[])
+{
+//    char s2[10];
+    strcpy(s2,s1);
+    return s2;
+}
+
+//P113. print string length
+#include <stdio.h>
+#include<string.h>
+int stringlen(char s1[]);
+int main()
+{
+ char s1[10];
+ int len;
+ printf("enter string1:\n");
+ scanf("%s",s1);
+ len=stringlen(s1);
+printf("%d",len);
+   return 0;
+}
+
+int stringlen(char s1[])
+{
+  int len;
+    len=strlen(s1);
+    return len;
+}
+
+//P114. string concatination
+
+#include <stdio.h>
+#include<string.h>
+int stringcat(char s1[],char s2[],char s3[]);
+int main()
+{
+ char s1[10],s2[10],s3[10];
+ int len;
+ printf("enter strings:\n");
+ scanf("%s %s",s1,s2);
+ stringcat(s1,s2,s3);
+printf("%s",s3);
+   return 0;
+}
+
+int stringcat(char s1[],char s2[],char s3[])
+{
+//  char s3[10];
+    strcat(s1,s2);
+    strcpy(s3,s1);
+    return s3;
+}
+
+//P115. check 2 strings are same
+#include <stdio.h>
+#include<string.h>
+int stringsame(char s1[],char s2[]);
+int main()
+{
+ char s1[10],s2[10];
+ int len;
+ printf("enter strings:\n");
+ scanf("%s %s",s1,s2);
+ stringsame(s1,s2);
+printf("same");
+   return 0;
+}
+
+int stringsame(char s1[],char s2[])
+{
+if(s1==s2)
+    printf("same");
+}
+
+//P116. string to uppercase
+#include <stdio.h>
+#include<string.h>
+int stringup(char s1[]);
+int main()
+{
+ char s1[10];
+ printf("enter strings:\n");
+ scanf("%s",s1);
+ stringup(s1);
+printf("%s",s1);
+   return 0;
+}
+
+int stringup(char s1[])
+{
+strupr(s1);
+}
+
+//P117. replace white space with special char
+
+#include <stdio.h>
+#include<string.h>
+int stringrep(char s1[]);
+int main()
+{
+ char s1[10];
+ printf("enter strings:\n");
+ scanf("%[^\n]s",s1); // "%[^\n]s" reads until new line appears, else if we give white space it will stop there
+ stringrep(s1);
+printf("%s",s1);
+   return 0;
+}
+
+int stringrep(char s1[])
+{
+    int i;
+for(i=0;i<10;i++)
+{
+    if(s1[i]==' ')
+    {
+       s1[i]='#';
+       printf("%s",s1);
+    }
+}
+return s1;
+}
+
+//P118. reverse the string without library function
+#include <stdio.h>
+#include<string.h>
+int stringrev(char s1[]);
+int main()
+{
+ char s1[10];
+ printf("enter strings:\n");
+ scanf("%[^\n]s",s1); // "%[^\n]s" reads until new line appears, else if we give white space it will stop there
+ stringrev(s1);
+//printf("%s\n",s1);
+   return 0;
+}
+
+int stringrev(char s1[])
+{
+    int i,len;
+    len=strlen(s1);
+    printf("Length of given string is %d\n",len);
+for(i=len-1;i>=0;i--)
+{
+    printf("%c",s1[i]);
+}
+return s1;
+}
+
+//P119. print nu. of times a given char is appear
+#include <stdio.h>
+#include<string.h>
+int stringnumtimes(char s1[],char ch);
+int main()
+{
+ char s1[10],ch;
+  printf("enter the char:\n");
+ scanf("%c",&ch);
+ printf("enter strings:\n");
+ scanf("%s",s1); // "%[^\n]s" reads until new line appears, else if we give white space it will stop there
+
+ stringnumtimes(s1,ch);
+//printf("%s\n",s1);
+   return 0;
+}
+
+int stringnumtimes(char s1[],char ch)
+{
+    int i,len,count;
+    len=strlen(s1);
+    count=0;
+for(i=0;i<len;i++)
+{
+    if(s1[i]==ch)
+    {
+        count++;
+    }
+}
+    printf("%c is repeated %d times",ch,count);
+}
+
+//P120. search a substring within the string
+
+
+//P121. Sorting of string
+#include <stdio.h>
+#include<string.h>
+int stringsort(char s1[]);
+int main()
+{
+ char s1[10];
+ printf("enter strings:\n");
+ scanf("%s",s1); // "%[^\n]s" reads until new line appears, else if we give white space it will stop there
+
+ stringsort(s1);
+//printf("%s\n",s1);
+   return 0;
+}
+
+int stringsort(char s1[])
+{
+    int i,j;
+    char temp;
+int len1=strlen(s1);
+
+for(i=0;i<len1;i++)
+{
+    for(j=i+1;j<len1;j++)
+    {
+        if(s1[i]>s1[j])
+        {
+            temp=s1[i];
+            s1[i]=s1[j];
+            s1[j]=temp;
+        }
+
+
+    }
+}
+    printf("%s is sorted string ",s1);
+}
+
+
+
