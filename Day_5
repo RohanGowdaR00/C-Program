@@ -260,7 +260,7 @@ int main ()
       return 0;
   }
 
-//P65. 
+//P65. triangle formed or not
 
 #include<stdio.h>
 int main()
