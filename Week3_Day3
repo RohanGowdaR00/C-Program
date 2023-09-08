@@ -1,0 +1,20 @@
+//P142 & 143. WAP to create a structure and display its elements
+#include<stdio.h>
+int main()
+{
+    struct employee{
+    char name[50];
+    int id;
+    int salary;
+    };
+    struct employee e1,e2;
+    printf("enter name:\n");
+    scanf("%s %s",&e1.name,&e2.name);
+    printf("enter id details:\n");
+    scanf("%d %d",&e1.id,&e2.id);
+    printf("enter the salary:\n");
+    scanf("%d %d",&e1.salary,&e2.salary);
+    printf("name is %s %s & id is %d %d & salary is %d %d",e1.name,e2.name,e1.id,e2.id,e1.salary,e2.salary);
+}
+
+//P144. WAP to arrange student records in descending order of marks
