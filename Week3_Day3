@@ -54,7 +54,7 @@ int main()
     return 0;
 }
 
-//P145. WAP to arrange student records in descending order of marks
+//P145. WAP to print the age of the student using date of birth details.
 #include<stdio.h>
 struct birth_date
 {
@@ -103,4 +103,35 @@ int calc(struct birth_date date[],int i)
             age=2023-date[i].year-1;
     }
     return age;
+}
+
+//P146.WAP to take student details: student id, name, marks and print the student id and name of students who have marks less than 50
+#include<stdio.h>
+int main()
+{
+    struct student{
+    char name[20];
+    int id;
+    int marks;
+    };
+    int i,j;
+    struct student details[10],temp;
+    printf("enter student name,id & marks:\n");
+    for(i=0;i<2;i++)
+    {
+        scanf("%s",&details[i].name);
+        scanf("%d",&details[i].marks);
+        scanf("%d",&details[i].id);
+    }
+for(i=0;i<2;i++)
+{
+       if(details[i].marks<50)
+
+    {
+        printf("%d\n",details[i].marks);
+        printf("%s\n",details[i].name);
+        printf("%d\n",details[i].id);
+    }
+}
+
 }
