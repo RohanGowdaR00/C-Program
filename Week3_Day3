@@ -135,3 +135,45 @@ for(i=0;i<2;i++)
 }
 
 }
+
+//P147. WAP to take details: student id, name, marks and display details of student having highest marks using array of structures.
+#include<stdio.h>
+int main()
+{
+    struct student{
+    char name[20];
+    int marks,id;
+    };
+    int i,j;
+    struct student details[10],temp;
+    printf("enter student name,id & marks:\n");
+    for(i=0;i<5;i++)
+    {
+        scanf("%s",&details[i].name);
+        scanf("%d",&details[i].id);
+        scanf("%d",&details[i].marks);
+    }
+    for(i=0;i<5;i++)
+    {
+        for(int j=0;j<5;j++)
+        {
+            if(details[i].marks>details[j].marks)
+            {
+                temp=details[i];
+                details[i]=details[j];
+                details[j]=temp;
+            }
+        }
+    }
+    for(i=0;i<5;i++)
+    {
+        printf("%s\n",details[i].name);
+        printf("%d\n",details[i].id);
+        printf("%d\n",details[i].marks);
+
+    }
+
+    return 0;
+}
+
+
