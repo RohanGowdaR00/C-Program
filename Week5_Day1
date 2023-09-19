@@ -1,0 +1,115 @@
+172. WAP to create and display Singly Linked List
+#include<stdio.h>
+struct student{
+int roll;
+struct student *next;
+};
+
+int main()
+{
+      struct student *head=malloc(sizeof(struct student));
+      struct student *currptr=head;
+      currptr->roll=12;
+      currptr->next=malloc(sizeof(struct student));
+
+      currptr=currptr->next;
+      currptr->roll=14;
+      currptr->next=malloc(sizeof(struct student));
+
+      currptr=currptr->next;
+      currptr->roll=16;
+      currptr->next=NULL;
+
+      currptr=head;
+
+      while(1)
+      {
+          if(currptr)
+          {
+              printf("%d\n",currptr->roll);
+              currptr=currptr->next;
+          }
+          else
+            break;
+      }
+
+      return 0;
+}
+
+P173. add element at the a)starting & b)ending
+a)
+#include<stdio.h>
+struct add{
+int num;
+struct add *next;
+};
+
+int main()
+{
+    struct add *head=malloc(sizeof(struct add));
+    struct add *curptr=head;
+    curptr->num=100;
+    curptr->next=malloc(sizeof(struct add));
+
+    curptr=curptr->next;
+    curptr->num=200;
+    curptr->next=NULL;
+
+    struct add *temp=head;
+    head=malloc(sizeof(struct add));
+    curptr=head;
+
+    curptr->num=300;
+    curptr->next=temp;
+
+    curptr=head;
+
+    while(1)
+    {
+        if(curptr)
+        {
+            printf("%d\n",curptr->num);
+            curptr=curptr->next;
+        }
+        else
+            break;
+    }
+    return 0;
+}
+
+b)
+#include<stdio.h>
+struct add{
+int num;
+struct add *next;
+};
+
+int main()
+{
+    struct add *head=malloc(sizeof(struct add));
+    struct add *curptr=head;
+    curptr->num=100;
+    curptr->next=malloc(sizeof(struct add));
+
+    curptr=curptr->next;
+    curptr->num=200;
+    curptr->next=malloc(sizeof(struct add));
+
+      curptr=curptr->next;
+    curptr->num=300;
+    curptr->next=NULL;
+
+    curptr=head;
+
+    while(1)
+    {
+        if(curptr)
+        {
+            printf("%d\n",curptr->num);
+            curptr=curptr->next;
+        }
+        else
+            break;
+    }
+    return 0;
+}
