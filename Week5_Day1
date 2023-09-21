@@ -114,6 +114,181 @@ int main()
     return 0;
 }
 
+P174. Insert node at nth position
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct employee
+{
+    int serial_number;
+    char name[20];
+    struct employee *next;
+};
+int main()
+{
+    struct employee *head;
+    head=malloc(sizeof(struct employee));
+
+    struct employee *current=head;
+    current->serial_number=10;
+    strcpy(current->name,"rushabh");
+    current->next=malloc(sizeof(struct employee));
+
+    current=current->next;
+    current->serial_number=12;
+    strcpy(current->name,"rohan");
+    current->next=malloc(sizeof(struct employee));
+
+    current =current->next;
+    current->serial_number=16;
+    strcpy(current->name,"karthik");
+    current->next=NULL;
+
+    current=head;
+    while(1)
+    {
+        if(current)
+        {
+            printf("%s is %d\n",current->name,current->serial_number);
+            current=current->next;
+        }
+        else
+            break;
+    }
+
+    printf("Enter the position: ");
+    int position;
+    scanf("%d",&position);
+    int count=1;
+    current=head;
+
+//    if(position==1)
+//    {
+//    struct employee *add=head;
+//    head=malloc(sizeof(struct employee));
+//    current=head;
+//    current->serial_number=23;
+//    strcpy(current->name,"ramesh");
+//    current->next=add;
+//    }
+
+    while(count+1<position)
+    {
+        current=current->next;
+        count++;
+    }
+
+    struct employee *add=current->next;
+    current->next=malloc(sizeof(struct employee));
+    current=current->next;
+    current->serial_number=23;
+    strcpy(current->name,"ramesh");
+    current->next=add;
+
+    current=head;
+    while(1)
+    {
+        if(current)
+        {
+            printf("%s is %d\n",current->name,current->serial_number);
+            current=current->next;
+        }
+        else
+            break;
+    }
+    return 0;
+}
+
+P175. Delete node at nth position
+#include<stdio.h>
+#include<stdlib.h>
+struct student
+{
+    char name[20];
+    int roll;
+    struct student *next;
+};
+int main()
+{
+    int count=1,num;
+    printf("Enter the count:");
+    scanf("%d",&num);
+    struct student *head=malloc(sizeof(struct student));
+    struct student *current=head;
+    printf("Enter the roll number: ");
+    scanf("%d",&current->roll);
+    printf("Enter the name: ");
+    scanf("%s",current->name);
+
+    while(count<num)
+    {
+        current->next=malloc(sizeof(struct student));
+        current=current->next;
+
+        printf("Enter the roll number: ");
+        scanf("%d",&current->roll);
+        printf("Enter the name: ");
+        scanf("%s",current->name);
+        count++;
+    }
+
+    current->next=NULL;
+    current=head;
+
+    while(1)
+    {
+        if(current)
+        {
+            printf("%s is %d\n",current->name,current->roll);
+            current=current->next;
+        }
+        else
+            break;
+    }
+
+    printf("Enter the position: ");
+    int position;
+    scanf("%d",&position);
+    count=1;
+
+    current=head;
+    while(count<position)
+    {
+        current=current->next;
+        count++;
+    }
+
+    struct student *add=current->next;
+    free(current);
+
+    count=1;
+    current=head;
+    while(count+1<position)
+    {
+        current=current->next;
+        count++;
+    }
+    current->next=add;
+
+    current=head;
+    while(1)
+    {
+        if(current)
+        {
+            printf("%s is %d\n",current->name,current->roll);
+            current=current->next;
+        }
+        else
+            break;
+    }
+
+
+
+
+
+    return 0;
+}
+
 P177. Create & display stacck using linked list
 #include<stdio.h>
 
