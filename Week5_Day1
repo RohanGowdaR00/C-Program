@@ -113,3 +113,40 @@ int main()
     }
     return 0;
 }
+
+P177. Create & display stacck using linked list
+#include<stdio.h>
+
+struct student{
+int roll;
+struct student *below;
+};
+
+int main()
+{
+    struct student *head=malloc(sizeof(struct student));
+    struct student *curptr=head;
+    curptr->roll=100;
+    curptr->below=NULL;
+
+    struct student *temp=head;
+    head=malloc(sizeof(struct student));
+    curptr=head;
+    curptr->roll=200;
+
+    curptr->below=temp;
+
+    curptr=curptr->below;
+
+    curptr=head;
+    while(1)
+    {
+        if(curptr)
+        {
+            printf("%d\n",curptr->roll);
+            curptr=curptr->below;
+        }
+        else
+            break;
+    }
+}
