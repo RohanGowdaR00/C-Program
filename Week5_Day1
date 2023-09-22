@@ -281,11 +281,6 @@ int main()
         else
             break;
     }
-
-
-
-
-
     return 0;
 }
 
@@ -324,4 +319,51 @@ int main()
         else
             break;
     }
+}
+
+P178. Push-Pop on stack used linked list
+#include<stdio.h>
+struct stack
+{
+    int val;
+    struct stack *link;
+};
+struct stack *top=NULL;
+void push(int x);
+void display(void);
+void pop(void);
+
+int main()
+{
+    push(2);
+    push(3);
+    push(4);
+    display();
+    pop();
+    display();
+
+    return 0;
+}
+void push(int x)
+{
+    struct stack *newnode=malloc(sizeof(struct stack));
+    newnode->val=x;
+    newnode->link=top;
+    top=newnode;
+}
+void display(void)
+{
+    struct stack *curr=top;
+    while(curr!=NULL)
+    {
+        printf("%d\n",curr->val);
+        curr=curr->link;
+    }
+}
+void pop(void)
+{
+    printf("After popping top node :\n");
+    struct stack *curr=top;
+    top=top->link;
+    free(curr);
 }
