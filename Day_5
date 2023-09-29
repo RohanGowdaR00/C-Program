@@ -3,10 +3,13 @@
   #include<stdio.h>
   int main()
   {
-      int a,A;
-      printf("enter 2 no:\n");
-      scanf("%d %d",&a,&A);
-      if(a==A)
+      char ch1,ch2;
+      printf("enter small char & capital char:\n");
+      scanf("%c %c",&ch1,&ch2);
+
+      
+      ch2=ch2+32;
+      if(ch1==ch2)
         printf("equal");
       else
         printf("not equal");
