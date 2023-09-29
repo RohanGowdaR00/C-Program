@@ -302,7 +302,49 @@ return 0;
 }
 
 //P86. Set,clear & toggle the last bit
+#include<stdio.h>
+int set_a_bit(int a, int n);
+int clear_a_bit(int b, int n);
+int toggle_a_bit(int c,int n);
+int main()
+{
+ int a,b,c,n,s,cl,t,p;
+ printf("enter a no:");
+ scanf("%d",&n);
+ s=set_a_bit(a,n);
+ printf("no after setting a position  is %d\n",s);
+ cl=clear_a_bit(b, n);
+ printf("no after clearing a position  is %d\n",cl);
+ t=toggle_a_bit(c,n);
+ printf("no after toggling a position is %d\n",t);
+ }
+ int set_a_bit(int a, int n)
+ {
+  int p;
+  printf("enter the position:\n");
+  scanf("%d",&p);
+  int s=(n|(1<<(p-1)));
+  return s;
+ }
+ int clear_a_bit(int b, int n)
+ {
+  int p;
+  printf("enter the position:\n");
+  scanf("%d",&p);
+  int cl=(n&(~(1<<(p-1))));
+  return cl;
+ }
+ int toggle_a_bit(int c,int n)
+ {
+  int p;
+  printf("enter the position:\n");
+  scanf("%d",&p);
+  int t=(n^(1<<(p-1)));
+  return t;
+ }
 
+
+          or
 #include<stdio.h>
 int main()
 {
